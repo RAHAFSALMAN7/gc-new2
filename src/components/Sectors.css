@@ -1,0 +1,34 @@
+.sectors .section-head { display: flex; justify-content: space-between; align-items: flex-end; max-width: none; gap: 30px; flex-wrap: wrap; margin-bottom: clamp(40px,5vw,64px); }
+.sectors .section-head .h-section { max-width: 16ch; }
+.sec-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.sec {
+  background: #fff; padding: clamp(24px,2.4vw,34px); position: relative;
+  min-height: 248px; display: flex; flex-direction: column;
+  transition: background .4s, color .4s; overflow: hidden; cursor: default;
+}
+.sec::before {
+  content: ""; position: absolute; left: 0; top: 0; height: 3px; width: 100%;
+  background: var(--gc-blue); transform: scaleX(0); transform-origin: left;
+  transition: transform .5s var(--ease-out);
+}
+.sec:hover { background: var(--gc-navy); color: #fff; }
+.sec:hover::before { transform: scaleX(1); background: var(--gc-gold); }
+.sec .sec-n { font-family: var(--f-mono); font-size: 11px; color: var(--gc-blue); letter-spacing: .1em; transition: color .4s; }
+.sec:hover .sec-n { color: var(--gc-gold-soft); }
+.sec .sec-ico { width: 38px; height: 38px; color: var(--gc-blue); margin: 14px 0 auto; transition: color .4s; }
+.sec .sec-ico svg { width: 100%; height: 100%; }
+.sec:hover .sec-ico { color: var(--gc-gold); }
+.sec h4 { font-family: var(--f-head); font-weight: 600; font-size: 18.5px; letter-spacing: -.01em; margin-bottom: 8px; line-height: 1.15; }
+.sec .sec-d { font-size: 13.5px; color: var(--slate); line-height: 1.55; transition: color .4s; }
+.sec:hover .sec-d { color: rgba(255,255,255,.66); }
+.sec .sec-foot {
+  display: flex; align-items: baseline; gap: 8px; margin-top: 16px;
+  padding-top: 14px; border-top: 1px solid var(--line); transition: border-color .4s;
+}
+.sec:hover .sec-foot { border-color: var(--line-dark); }
+.sec .sec-count { font-family: var(--f-display); font-weight: 700; font-size: 22px; color: var(--gc-ink); transition: color .4s; }
+.sec:hover .sec-count { color: #fff; }
+.sec .sec-clab { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--slate-2); }
+
+@media (max-width: 1080px) { .sec-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 760px) { .sec-grid { grid-template-columns: 1fr; } }

@@ -1,0 +1,62 @@
+.projects { background: var(--paper); position: relative; }
+.projects .eyebrow { color: var(--gc-blue); }
+.projects .h-section { color: var(--gc-ink); }
+.projects .lead { color: var(--slate); }
+.projects .lead b { color: var(--gc-ink) !important; }
+.projects .section-head {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  max-width: none; gap: 30px; flex-wrap: wrap; margin-bottom: clamp(40px,5vw,64px);
+}
+.projects .section-head .h-section { max-width: 14ch; }
+.viewall {
+  font-family: var(--f-head); font-weight: 600; font-size: 14.5px; color: var(--gc-ink);
+  display: inline-flex; align-items: center; gap: 10px;
+  padding-bottom: 5px; border-bottom: 1.5px solid var(--gc-gold); transition: gap .3s, color .3s;
+}
+.viewall:hover { gap: 16px; color: var(--gc-blue); }
+
+.proj-grid { display: grid; grid-template-columns: repeat(3,1fr); grid-auto-rows: minmax(0,1fr); gap: 14px; }
+.pcard {
+  position: relative; overflow: hidden; border-radius: 3px; min-height: 280px;
+  display: flex; isolation: isolate;
+}
+.pcard.lead { grid-column: span 2; grid-row: span 2; min-height: 576px; }
+.pcard .img-ph { transition: transform 1.1s var(--ease-out); }
+.pcard:hover .img-ph { transform: scale(1.05); }
+.pcard .scrim {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(0deg,rgba(6,10,22,.92) 4%,rgba(6,10,22,.35) 38%,rgba(6,10,22,.05) 66%);
+  transition: background .5s;
+}
+.pcard:hover .scrim { background: linear-gradient(0deg,rgba(6,10,22,.95) 10%,rgba(8,18,44,.55) 50%,rgba(20,40,90,.15) 100%); }
+.pcard .ptag {
+  position: absolute; top: 18px; left: 18px; z-index: 2;
+  font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--gc-navy); background: var(--gc-gold); padding: 6px 11px; border-radius: 2px;
+}
+.pcard .pidx { position: absolute; top: 18px; right: 20px; z-index: 2; font-family: var(--f-mono); font-size: 11px; color: rgba(255,255,255,.55); }
+.pcard .pcontent { position: relative; z-index: 2; margin-top: auto; padding: clamp(20px,2vw,30px); }
+.pcard h3 {
+  font-family: var(--f-display); font-weight: 700; font-size: clamp(18px,1.5vw,22px);
+  line-height: 1.08; letter-spacing: -.01em; margin-bottom: 10px; color: #fff; text-shadow: 0 2px 24px rgba(0,0,0,.5);
+}
+.pcard.lead h3 { font-size: clamp(26px,2.4vw,38px); }
+.pcard .pmeta { display: flex; gap: 9px; flex-wrap: wrap; align-items: center; font-size: 12.5px; color: rgba(255,255,255,.66); font-family: var(--f-head); }
+.pcard .pmeta .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--gc-gold); display: inline-block; }
+.pcard .pscope {
+  max-height: 0; overflow: hidden; opacity: 0;
+  transition: max-height .5s var(--ease-out), opacity .4s, margin .5s;
+  color: rgba(255,255,255,.7); font-size: 13.5px; line-height: 1.55; max-width: 46ch;
+}
+.pcard:hover .pscope { max-height: 80px; opacity: 1; margin-top: 12px; }
+.pcard .pline { position: absolute; left: 0; bottom: 0; height: 3px; width: 0; background: var(--gc-gold); z-index: 3; transition: width .6s var(--ease-out); }
+.pcard:hover .pline { width: 100%; }
+
+@media (max-width: 1080px) {
+  .proj-grid { grid-template-columns: repeat(2,1fr); }
+  .pcard.lead { grid-column: span 2; grid-row: span 1; min-height: 360px; }
+}
+@media (max-width: 760px) {
+  .proj-grid { grid-template-columns: 1fr; }
+  .pcard.lead { grid-column: span 1; }
+}

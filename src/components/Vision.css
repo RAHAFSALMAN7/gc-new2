@@ -1,0 +1,42 @@
+.vision { position: relative; color: #fff; overflow: hidden; background: #1E4A92; isolation: isolate; }
+.vision-bg { position: absolute; inset: 0; z-index: 0; }
+.vision-bg::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(20,42,82,.84), rgba(20,42,82,.68) 45%, rgba(18,38,74,.92)),
+    linear-gradient(90deg, rgba(20,42,82,.92), rgba(20,42,82,.42) 60%, transparent);
+}
+.vision .container { position: relative; z-index: 2; }
+.vision-num {
+  position: absolute; right: -3%; top: 50%; transform: translateY(-50%); z-index: 1;
+  font-family: var(--f-display); font-weight: 800; font-size: clamp(180px,30vw,460px); line-height: .8;
+  color: transparent; -webkit-text-stroke: 1.5px rgba(201,162,75,.28); letter-spacing: -.04em;
+  pointer-events: none; user-select: none;
+}
+.vision-inner { max-width: 680px; padding-block: clamp(80px,10vw,150px); }
+.vision-inner h2 {
+  font-family: var(--f-display); font-weight: 700; font-size: clamp(34px,5vw,68px);
+  line-height: 1.0; letter-spacing: -.02em; margin: 22px 0 26px;
+}
+.vision-inner p { font-size: clamp(16px,1.35vw,19px); line-height: 1.7; color: rgba(255,255,255,.74); max-width: 56ch; margin-bottom: 36px; }
+.vision-pillars {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 1px;
+  background: var(--line-dark); border: 1px solid var(--line-dark); margin-bottom: 38px;
+}
+.vision-pillars .vp { background: rgba(10,17,36,.5); padding: 24px 22px; }
+.vision-pillars .vp .vpn { font-family: var(--f-mono); font-size: 11px; color: var(--gc-gold-soft); letter-spacing: .1em; }
+.vision-pillars .vp h5 { font-family: var(--f-head); font-weight: 600; font-size: 16.5px; margin: 12px 0 7px; letter-spacing: -.01em; }
+.vision-pillars .vp p { font-size: 13px; color: rgba(255,255,255,.6); margin: 0; line-height: 1.55; }
+.giga { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 38px; }
+.giga .g {
+  display: inline-flex; align-items: center; gap: 9px; padding: 11px 18px;
+  border: 1px solid rgba(255,255,255,.18); border-radius: 2px;
+  font-family: var(--f-head); font-weight: 600; font-size: 14px;
+  background: rgba(255,255,255,.04); transition: border-color .3s, background .3s;
+}
+.giga .g:hover { border-color: var(--gc-gold); background: rgba(201,162,75,.1); }
+.giga .g i { width: 6px; height: 6px; border-radius: 50%; background: var(--gc-gold); }
+@media (max-width: 760px) {
+  .vision-pillars { grid-template-columns: 1fr; }
+  .vision-num { font-size: 40vw; right: -8%; }
+}
