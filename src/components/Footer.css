@@ -3,7 +3,7 @@
   display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 36px;
   padding-bottom: clamp(40px,5vw,60px); border-bottom: 1px solid var(--line-dark);
 }
-.footer-brand img { height: 52px; filter: brightness(0) invert(1); margin-bottom: 20px; }
+.footer-brand img { height: 68px; width: auto; margin-bottom: 20px; }
 .footer-brand p { font-size: 14px; max-width: 34ch; line-height: 1.6; }
 .footer-col h5 { font-family: var(--f-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 18px; }
 .footer-col a { display: block; color: rgba(255,255,255,.7); font-size: 14.5px; padding: 7px 0; transition: color .3s, padding-left .3s; }

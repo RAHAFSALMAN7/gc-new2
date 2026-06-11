@@ -22,12 +22,13 @@ export default function Nav() {
   }, []);
 
   const cls = ['nav', scrolled ? 'scrolled' : 'at-top', menuOpen ? 'menu-open' : ''].filter(Boolean).join(' ');
+  const logoSrc = scrolled && !menuOpen ? '/gc-logo.png' : '/gc-logo-white.png';
 
   return (
     <header className={cls}>
       <div className="nav-inner">
         <a href="#top" className="nav-logo" aria-label="Gulf Consult home">
-          <img src="/gc-logo.png" alt="Gulf Consult Architects & Engineers" />
+          <img src={logoSrc} alt="Gulf Consult Architects & Engineers" />
         </a>
         <nav className="nav-links">
           {links.map(l => (
