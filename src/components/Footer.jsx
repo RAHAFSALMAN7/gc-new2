@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="container">
         <div className="footer-top">
           <div className="footer-brand">
-            <img src="/gc-logo.png" alt="Gulf Consult" />
+            <img src="/gc-logo.png" alt="Gulf Consult Architects & Engineers" />
             <p>Engineering Saudi Arabia's future since 1980. A leading multidisciplinary engineering consultancy delivering Vision 2030.</p>
           </div>
           <div className="footer-col">

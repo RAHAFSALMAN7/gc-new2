@@ -27,7 +27,7 @@ export default function Nav() {
     <header className={cls}>
       <div className="nav-inner">
         <a href="#top" className="nav-logo" aria-label="Gulf Consult home">
-          <img src="/gc-logo.png" alt="Gulf Consult" />
+          <img src="/gc-logo.png" alt="Gulf Consult Architects & Engineers" />
         </a>
         <nav className="nav-links">
           {links.map(l => (
